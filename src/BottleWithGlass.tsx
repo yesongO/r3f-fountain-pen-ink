@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 // import React, { useRef, useState, useEffect } from 'react';
 import { useGLTF, Center } from '@react-three/drei';
+import { useThree } from '@react-three/fiber';
 // import { useBox, useCylinder } from '@react-three/cannon';
 
 type BottleProps = {
@@ -9,7 +10,11 @@ type BottleProps = {
 
 export default function BottleWithGlass({ bottleColor }: BottleProps) {
     const { nodes } = useGLTF('/bottle.glb');
-    console.log(nodes);
+    const { viewport } = useThree();
+
+    const xPosition = -viewport.width / 2 + viewport.width * 0.2;
+
+    // console.log(nodes);
 
     const bead = nodes.Bead_node as THREE.Mesh;
     const bottle = nodes.Bottle_node as THREE.Mesh;
@@ -20,7 +25,7 @@ export default function BottleWithGlass({ bottleColor }: BottleProps) {
     const stand = nodes.Stand_node as THREE.Mesh;
 
     return (
-        <Center position={[-170, 0, 0]}>
+        <Center position={[xPosition, 0, 0]}>
             <group>
                 {/* bead */}
                 <mesh castShadow geometry={(bead as THREE.Mesh).geometry}

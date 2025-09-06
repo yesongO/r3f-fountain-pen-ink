@@ -8,7 +8,7 @@ import * as THREE from 'three'
 export default function Stars(props: any) {
     const ref = useRef<any>(null)
 
-    const numStars = 5000;
+    const numStars = 4000;
     const radius = 400;
 
     const [positions, colors, sizes] = useMemo<[Float32Array, Float32Array, Float32Array]>(() => {
