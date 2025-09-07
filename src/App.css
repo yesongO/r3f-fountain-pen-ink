@@ -55,7 +55,7 @@ html, body, #root {
   gap: 14px; /* 버튼 사이 간격 */
   padding: 22px 30px;
   background-color: rgba(216, 216, 216, 0.1); /* 배경 */
-  border-radius: 30px;
+  border-radius: 8px;
   backdrop-filter: blur(10px); /* 뒷 배경을 블러 처리해서 고급스러운 느낌 */
   /* border: 1px solid rgba(255, 255, 255, 0.2); */
 }
@@ -111,22 +111,22 @@ html, body, #root {
 
 .handwriting-canvas {
   position: absolute;
-  top: 30%;
-  left: 50%;
+  top: 24%;
+  left: 48%;
   width: 180%;
   height: 180%;
   z-index: 10;
 }
 
-/* --- 제품 정보 패널 스타일 --- */
+/* --- 제품 정보 패널 --- */
 .product-info {
   position: absolute; /* 캔버스 위에 띄우기 */
-  top: 50%; /* 세로 중앙 정렬 */
-  right: 50px; /* 오른쪽에서 50px 떨어지게 */
+  top: 60%; /* 세로 중앙 정렬 */
+  left: 50%; /* 오른쪽에서 50px 떨어지게 */
   transform: translateY(-50%); /* 정확한 세로 중앙 정렬 */
   
   width: 300px; /* 패널의 가로 너비 */
-  padding: 30px;
+  padding: 20px;
   color: white;
   
   display: flex;
@@ -134,23 +134,25 @@ html, body, #root {
   gap: 20px; /* 각 아이템 사이의 간격 */
 
   /* 팔레트와 비슷한 반투명 유리 효과 */
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+
+  z-index: 11;
 }
 
 .product-info .price {
   font-size: 28px;
   font-weight: 600;
   margin: 0;
-  color: #caf6fd; /* 포인트 컬러 */
+  color: #ffffff; /* 포인트 컬러 */
 }
 
 .product-info .description {
   font-size: 15px;
-  line-height: 1.6; /* 줄 간격 */
-  opacity: 0.8; /* 살짝 연하게 */
+  line-height: 1.6; 
+  opacity: 0.8; 
   margin: 0;
 }
 
@@ -158,7 +160,7 @@ html, body, #root {
 .quantity-selector {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
 }
 
 .quantity-selector button {
@@ -190,8 +192,8 @@ html, body, #root {
   padding: 15px 0;
   border-radius: 10px;
   border: none;
-  background-color: #caf6fd; /* 포인트 컬러 */
-  color: #1B1E3F; /* 어두운 글씨색 */
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #ffffff; /* 어두운 글씨색 */
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
@@ -201,4 +203,15 @@ html, body, #root {
 .buy-button:hover {
   transform: scale(1.02);
   box-shadow: 0 0 15px #caf6fd;
+}
+
+.copyright {
+  position: absolute; /* 캔버스 위에 띄우기 */
+  bottom: 20px; /* 화면 하단에서 20px 위에 위치 */
+  width: 100%; /* 가로 꽉 채우기 */
+  
+  text-align: center; /* 가운데 정렬 */
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4); /* 너무 튀지 않게 살짝 투명한 흰색 */
+  user-select: none; /* 텍스트가 드래그되지 않도록 */
 }

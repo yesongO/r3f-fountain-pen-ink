@@ -38,7 +38,7 @@ const cherryRedPathData = "M11.60 44.50Q6.05 44.50 3.03 41.55Q0 38.60 0 33.90Q0 
 const colorOptions = [
   { id: 'milkyWay', bottleColor: '#45458D', cssClass: 'milkyWay', label: 'milky way', path: milkyWayPathData, price: "25,000", description: "밤하늘의 반짝이는 은하수를 담은 듯한 잉크"},
   { id: 'pulsarPulse', bottleColor: '#006297', cssClass: 'pulsarPulse', label: 'pulsar pulse', path: pulsarPulsePathData, price: "25,000", description: "깊은 우주 속 별의 푸른 섬광을 모티브로 만든 잉크"},
-  { id: 'christmasStar', bottleColor: '#d59a38', cssClass: 'christmasStar', label: 'christmas star', path: christmasStarPathData, price: "25,000", description: "크리스마스 트리 위, 빛나는 황금 별의 색감을 담은 잉크"},
+  { id: 'christmasStar', bottleColor: '#d59a38', cssClass: 'christmasStar', label: 'christmas star', path: christmasStarPathData, price: "25,000", description: "크리스마스 트리 위, 황금 별의 색감을 담은 잉크"},
   { id: 'cherryRed', bottleColor: '#8b0000', cssClass: 'cherryRed', label: 'cherry red', path: cherryRedPathData, price: "25,000", description: "잘 익은 체리처럼 깊고 매혹적인 붉은 색의 잉크"},
 ]
 
@@ -67,7 +67,7 @@ function App() {
   const handleIncrement = () => setQuantity(prev => prev + 1);
   const handleDecrement = () => setQuantity(prev => (prev > 1 ? prev - 1 : 1));
 
-  const appClassName = `App ${selectedColor.cssClass}`;
+  // const appClassName = `App ${selectedColor.cssClass}`;
 
   return (
     <div className={`App ${selectedColor.cssClass}`}>
@@ -123,6 +123,9 @@ function App() {
         </div>
         <button className="buy-button">구매하기</button>
       </div>
+      <footer className="copyright">
+        <p>© 2025 Ink. All rights reserved.</p>
+      </footer>
     </div>
   )
 }
