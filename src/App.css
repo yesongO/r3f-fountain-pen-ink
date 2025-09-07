@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'Pretendard-thin'; 
+  src: url('/fonts/Pretendard-Thin.ttf') format('ttf'); 
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretendard-medium';
+  src: url('/fonts/Pretendard-Medium.ttf') format('ttf');
+  font-style: normal;
+}
+
 
 html, body, #root {
   margin: 0;
@@ -46,28 +58,27 @@ html, body, #root {
 /* // 색상 컬러 4종류 : milkyWay(보라빛), pulsarPulse(파란빛), christmasStar(노란빛), cherryRed(빨간빛) */
 /* 색상 팔레트 컨테이너 스타일 */
 .palette-container {
-  position: absolute; /* 캔버스 위에 띄우기 위한 핵심! */
-  top: 40px; /* 화면 상단에서 30px 아래에 위치 */
+  position: absolute; 
+  top: 40px; 
   left: 280px;
-  transform: translateX(-50%); /* 정확히 가운데 정렬 */
-  
+  transform: translateX(-50%); 
   display: flex;
-  gap: 14px; /* 버튼 사이 간격 */
+  gap: 14px; 
   padding: 22px 30px;
-  background-color: rgba(216, 216, 216, 0.1); /* 배경 */
+  background-color: rgba(216, 216, 216, 0.1); 
   border-radius: 8px;
-  backdrop-filter: blur(10px); /* 뒷 배경을 블러 처리해서 고급스러운 느낌 */
+  backdrop-filter: blur(10px); 
   /* border: 1px solid rgba(255, 255, 255, 0.2); */
 }
 
 /* 개별 색상 아이템 (동그라미 + 텍스트) */
 .palette-item {
   display: flex;
-  flex-direction: column; /* 아이템을 세로로 쌓기 (동그라미 위, 텍스트 아래) */
+  flex-direction: column; 
   align-items: center;
   cursor: pointer;
   transition: transform 0.3s ease;
-  width: 90px;
+  width: 100px;
 }
 
 .palette-item:hover {
@@ -76,14 +87,14 @@ html, body, #root {
 
 /* 동그란 색상 견본 */
 .swatch {
-  width: 40px; /* 가로 */
-  height: 40px; /* 세로 */
+  width: 40px; 
+  height: 40px; 
   border: 2px solid rgba(255, 255, 255, 0.5);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
   
-  /* --- 여기가 물방울 모양의 핵심! --- */
-  /* border-radius를 비대칭으로 줘서 한쪽만 뾰족하게 만들기 */
+  /* --- 물방울 모양 --- */
+  /* 한쪽만 뾰족하게 만들기 */
   border-radius: 5% 50% 50% 50%;
   /* 45도 회전시켜서 뾰족한 부분이 아래로 향하게 */
   transform: rotate(45deg);
@@ -92,6 +103,7 @@ html, body, #root {
 /* 색상 이름 텍스트 */
 .label {
   margin-top: 8px;
+  letter-spacing: 0.03em;
   color: white;
   font-size: 14px;
   text-transform: capitalize;
@@ -120,20 +132,17 @@ html, body, #root {
 
 /* --- 제품 정보 패널 --- */
 .product-info {
-  position: absolute; /* 캔버스 위에 띄우기 */
-  top: 60%; /* 세로 중앙 정렬 */
-  left: 50%; /* 오른쪽에서 50px 떨어지게 */
-  transform: translateY(-50%); /* 정확한 세로 중앙 정렬 */
-  
-  width: 300px; /* 패널의 가로 너비 */
+  position: absolute; 
+  top: 60%;
+  left: 50%; 
+  transform: translateY(-50%); 
+  width: 370px; 
   padding: 20px;
   color: white;
-  
   display: flex;
-  flex-direction: column; /* 아이템을 세로로 쌓기 */
-  gap: 20px; /* 각 아이템 사이의 간격 */
+  flex-direction: column; 
+  gap: 14px; 
 
-  /* 팔레트와 비슷한 반투명 유리 효과 */
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   backdrop-filter: blur(10px);
@@ -143,14 +152,17 @@ html, body, #root {
 }
 
 .product-info .price {
+  font-family: 'Pretendard-thin';
   font-size: 28px;
-  font-weight: 600;
+  font-weight: 400;
   margin: 0;
   color: #ffffff; /* 포인트 컬러 */
 }
 
 .product-info .description {
-  font-size: 15px;
+  font-family: 'Pretendard-thin';
+  font-weight: 500;
+  font-size: 18px;
   line-height: 1.6; 
   opacity: 0.8; 
   margin: 0;
@@ -188,6 +200,8 @@ html, body, #root {
 
 /* 구매하기 버튼 */
 .buy-button {
+  font-family: 'Pretendard-thin';
+  letter-spacing: 0.05em;
   width: 100%;
   padding: 15px 0;
   border-radius: 10px;
@@ -206,12 +220,12 @@ html, body, #root {
 }
 
 .copyright {
-  position: absolute; /* 캔버스 위에 띄우기 */
-  bottom: 20px; /* 화면 하단에서 20px 위에 위치 */
-  width: 100%; /* 가로 꽉 채우기 */
+  position: absolute; 
+  bottom: 20px; 
+  width: 100%; 
   
-  text-align: center; /* 가운데 정렬 */
+  text-align: center;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.4); /* 너무 튀지 않게 살짝 투명한 흰색 */
-  user-select: none; /* 텍스트가 드래그되지 않도록 */
+  color: rgba(255, 255, 255, 0.4); 
+  user-select: none; 
 }

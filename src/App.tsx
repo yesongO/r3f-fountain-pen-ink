@@ -76,7 +76,6 @@ function App() {
         visible={isTextVisible} 
       />
       <Canvas shadows camera={{ position: [0, 5, 500], fov: 50 }}>
-        {/* <color attach="background" args={isColor ? ["#2F274C"] : ["#000000"]} /> */}
         <Suspense fallback={null}>
           {selectedColor.id === 'milkyWay' && <Stars />}
           {selectedColor.id === 'christmasStar' && <Stars />}
@@ -124,7 +123,7 @@ function App() {
         <button className="buy-button">구매하기</button>
       </div>
       <footer className="copyright">
-        <p>© 2025 Ink. All rights reserved.</p>
+        &copy; 2025. Yesong. All rights reserved.
       </footer>
     </div>
   )
@@ -157,60 +156,3 @@ function ColorPalette({ options, selectedColor, onColorChange }: PaletteProps) {
 }
 
 export default App
-
-// function App() {
-//   // 배경색 변경 상태 관리
-//   const [isColor, setIsColor] = useState(false);
-
-//   const handleBottleFall = (fallen: boolean) => {
-//     if (fallen) {
-//       setIsColor(true);
-//     }
-//   };
-
-//   const appClassName = `App ${isColor ? 'color' : 'basic'}`;
-
-//   return (
-//     <div className={appClassName}>
-//     <Canvas shadows camera={{ position: [0, 5, 500], fov: 50 }}>
-//       {/* <color attach="background" args={isColor ? ["#2F274C"] : ["#000000"]} /> */}
-
-//       <Suspense fallback={null}>
-//         {isColor && <Stars />}
-//       </Suspense>
-
-//       {/* <OrbitControls 
-//         maxDistance={700}
-//         minDistance={100}
-//         minPolarAngle={Math.PI / 4}
-//         maxPolarAngle={Math.PI / 2}
-//       /> */}
-
-//       <spotLight 
-//         position={[0, 1000, 100]} 
-//         angle={0.3} 
-//         penumbra={1} 
-//         intensity={1} 
-//         castShadow 
-//         shadow-mapSize={[1024, 1024]}
-//         shadow-camera-near={10}
-//         shadow-camera-far={5000}
-//         shadow-bias={-0.0001}
-//       />
-
-//       <Environment preset="forest" />
-
-//         <Physics gravity={[0, 0, 0]}>
-//         {/* <Debug color="lightblue" scale={1.01}> */}
-//           <Rig>
-//               <BottleWithGlass onFall={handleBottleFall}/>
-//               {/* <Boundaries /> */}
-//           </Rig>
-//         {/* </Debug> */}
-//         </Physics>
-//     </Canvas>
-//     </div>
-//   )
-// }
-
-// export default App
