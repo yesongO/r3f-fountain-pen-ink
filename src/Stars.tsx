@@ -1,4 +1,4 @@
-import React, { useState, useRef, useMemo } from 'react'
+import { useRef, useMemo } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { Points, PointMaterial } from '@react-three/drei'
 // @ts-ignore
@@ -33,7 +33,7 @@ export default function Stars(props: any) {
         return [positions, colors, sizes];
     }, [numStars, radius])
 
-    useFrame((state: any, delta: any) => {
+    useFrame((delta: any) => {
         if (ref.current) {
             ref.current.rotation.x -= delta / 100
             ref.current.rotation.y -= delta / 150
